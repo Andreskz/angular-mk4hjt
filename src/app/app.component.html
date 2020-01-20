@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="profile-picture">
+    <div class="profile-picture-outer-radius"></div>
+  </div>
+  
+  <div class="infobox">
+    <p class="infobox-username" *ngIf="name">{{name}}</p>
+<div class="">
+  <p class="align-left" *ngIf="Siguiendo > 100">Siguiendo:</p><p class="align-right">{{Siguiendo}}</p>  
+</div>
+
+<div class="clear-float" *ngIf="Seguidores > 700">
+  <p class="align-left">Seguidores:</p><p class="align-right">{{Seguidores}}</p>  
+</div>
+
+<div class="clear-float" *ngFor="let strength of strengths">
+    <p class="align-left">{{strength.text}}</p><p class="align-right">{{strength.level}}</p>  
+</div>
+
+<div class="clear-float" *ngFor="let person of people" [ngSwitch]="person.color">
+  <div *ngSwitchCase="'pink'" [style.color]="person.color">
+    <p class="align-left">{{person.name}}</p><p class="align-right">{{person.color}}</p>
+  </div>
+</div>
+
+  <div class="floating-action-button"(click)="boton()">+</div>
+
+  <div class="floating-action-button uno"(click)="botonuno()">-
+
+  </div>
+
+</div>
